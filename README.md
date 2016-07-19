@@ -17,5 +17,5 @@ bundle install
 ## Usage
 
 ```` sh
-ruby request.rb
+ruby script/get_nearby_places.rb
 ````
