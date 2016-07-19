@@ -16,8 +16,14 @@ bundle install
 
 ## Usage
 
-Get places nearby the *bibliothèque françois mitterrand* station.
+Get places near the *Bibliothèque François Mitterrand* station.
 
 ```` sh
 ruby script/get_nearby_places.rb
+````
+
+Get transit schedules near the *Bibliothèque François Mitterrand* station.
+
+```` sh
+ruby script/get_stop_schedules.rb
 ````
