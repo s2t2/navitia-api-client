@@ -27,4 +27,11 @@ module NavitiaAPI
   def self.places_nearby_endpoint(coords_param)
     "#{BASE_URL}/coord/#{coords_param}/places_nearby"
   end
+
+  # Get transit schedules near the specified location.
+  #
+  # @param [NavitiaAPI::Coords.parameterized] coords_param
+  def self.stop_schedules_endpoint(coords_param)
+    "#{BASE_URL}/coverage/#{coords_param}/coords/#{coords_param}/stop_schedules"
+  end
 end
