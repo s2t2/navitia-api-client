@@ -1,10 +1,20 @@
 require "httparty"
 require "pry"
 
-#
-# TEST API CONNECTION
-#
+# See documentation at http://doc.navitia.io/
+module NavitiaAPI
+  URL = "api.navitia.io"
+  VERSION = "v1"
+  KEY = ENV.fetch("NAVITIA_API_KEY", "Expecting an environment variable called 'NAVITIA_API_KEY'. Aquire one here: http://navitia.io/register/.")
 
-endpoint = "https://3b036afe-0110-4202-b9ed-99718476c2e0@api.navitia.io/v1/coverage"
-response = HTTParty.get(endpoint)
+  def self.base_url
+    "https://#{KEY}@#{URL}/#{VERSION}/"
+  end
+
+  def self.coverage_endpoint
+    "#{base_url}/coverage"
+  end
+end
+
+response = HTTParty.get(NavitiaAPI.coverage_endpoint)
 puts response.body, response.code, response.message, response.headers.inspect
