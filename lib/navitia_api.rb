@@ -1,6 +1,8 @@
 require "httparty"
 require "pry"
 
+require_relative "navitia_api/coords"
+
 module NavitiaAPI
   URL = "api.navitia.io"
   VERSION = "v1"
