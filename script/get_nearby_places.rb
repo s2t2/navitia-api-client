@@ -1,7 +1,10 @@
+require "httparty"
+require "pry"
+
 require_relative "../lib/navitia_api"
 
 coords = NavitiaAPI::Coords.new
-endpoint = NavitiaAPI.places_nearby_endpoint(coords.parameterized)
+endpoint = NavitiaAPI::Endpoints.places_nearby(coords.parameterized)
 puts "ENDPOINT -- #{endpoint}"
 response = HTTParty.get(endpoint)
 puts "RESULT -- #{response.code}: #{response.message}"
