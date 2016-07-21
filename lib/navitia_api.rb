@@ -6,8 +6,7 @@ require_relative "navitia_api/coords"
 module NavitiaAPI
   URL = "api.navitia.io"
   VERSION = "v1"
-  #KEY = ENV.fetch("NAVITIA_API_KEY", "Expecting an environment variable called 'NAVITIA_API_KEY'. Aquire one here: http://navitia.io/register/.")
-  KEY = "3b036afe-0110-4202-b9ed-99718476c2e0" # personal api key is not working for all endpoints at this time, so using the example key for now...
+  KEY = ENV.fetch("NAVITIA_API_KEY", "3b036afe-0110-4202-b9ed-99718476c2e0")
   BASE_URL = "https://#{KEY}@#{URL}/#{VERSION}"
 
   def self.regions_endpoint
